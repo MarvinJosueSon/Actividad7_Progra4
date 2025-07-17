@@ -20,22 +20,24 @@ def Ingresar():
                     while j <= cantidadCursos:
                         print(f"\nIngreso curso #{j} del estudiante #{i}")
                         codigoCursoAux = input("Ingrese el código del curso: ")
-                        if codigoCursoAux in Estudiantes[carnetAux][codigoCursoAux]:
-                            nombreCursoAux = input("Ingrese el nombre del curso: ")
-                            notaTarea = float(input("Ingrese la nota de tarea: "))
-                            notaParcial = float(input("Ingrese la nota del parcial: "))
-                            notaProyecto = float(input("Ingrese la nota del proyecto: "))
+                        nombreCursoAux = input("Ingrese el nombre del curso: ")
+                        notaTarea = float(input("Ingrese la nota de tarea: "))
+                        notaParcial = float(input("Ingrese la nota del parcial: "))
+                        notaProyecto = float(input("Ingrese la nota del proyecto: "))
 
-                            if (notaProyecto>=0 and notaProyecto<=100) and (notaTarea>=0 and notaTarea<=100) and (notaParcial>=0 and notaParcial<=100):
-                                cursos[codigoCursoAux] = {
-                                    "nombre": nombreCursoAux,
-                                    "notaTarea": notaTarea,
-                                    "notaParcial": notaParcial,
-                                    "notaProyecto": notaProyecto
-                                }
-                                j = j+ 1
-                            else:
-                                print("ERROR: Todas las notas deben estar entre 0 y 100")
+                        if (notaProyecto >= 0 and notaProyecto <= 100) and (notaTarea >= 0 and notaTarea <= 100) and (
+                                notaParcial >= 0 and notaParcial <= 100):
+                            cursos[codigoCursoAux] = {
+                                "nombre": nombreCursoAux,
+                                "notaTarea": notaTarea,
+                                "notaParcial": notaParcial,
+                                "notaProyecto": notaProyecto
+                            }
+                            j = j + 1
+                        else:
+                            print("ERROR: Todas las notas deben estar entre 0 y 100")
+
+
 
                     Estudiantes[carnetAux] = {
                         "nombre": nombreAux,
