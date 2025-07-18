@@ -88,7 +88,7 @@ while True:
     print("2. Mostrar todos los estudiantes y cursos")
     print("3. Buscar estudiante por carnet")
     print("4. Salir")
-    opcion = input("Ingrese la opción: ")
+    opcion = input("Ingrese la opción : ")
 
     match opcion:
         case "1":
