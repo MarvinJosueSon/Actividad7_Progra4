@@ -66,8 +66,22 @@ def verCursos():
             print(f"Nota parcial: {curso['notaParcial']}")
             print(f"Nota proyecto: {curso['notaProyecto']}")
 
-
-
+def buscar():
+    carnetAux = input("Ingrese el carnet que desea buscar: ")
+    if carnetAux in Estudiantes:
+        print(f"\n== Carnet: {carnetAux} ==")
+        print(f"Nombre del estudiante: {Estudiantes[carnetAux]['nombre']}")
+        print(f"Edad: {Estudiantes[carnetAux]['edad']}")
+        print(f"Carrera: {Estudiantes[carnetAux]['carrera']}")
+        print("Cursos:")
+        for codigo, curso in Estudiantes[carnetAux]['cursos'].items():
+            print(f"  Código: {codigo}")
+            print(f"  Nombre: {curso['nombre']}")
+            print(f"  Nota tarea: {curso['notaTarea']}")
+            print(f"  Nota parcial: {curso['notaParcial']}")
+            print(f"  Nota proyecto: {curso['notaProyecto']}")
+    else:
+        print("ERROR: Estudiante no encontrado")
 while True:
     print("\n== MENÚ ==")
     print("1. Ingresar estudiante")
@@ -81,6 +95,8 @@ while True:
             Ingresar()
         case "2":
             verCursos()
+        case "3":
+            buscar()
         case "4":
             print("Saliendo del sistema...")
             break
